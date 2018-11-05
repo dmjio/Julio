@@ -1,0 +1,46 @@
+name:                julia-ffi
+version:             0.1.0.0
+synopsis:            Haskell meets Julia
+description:         Julia DSL embedded in Haskell
+homepage:            github.com/botlab/julia-ffi
+license:             BSD3
+license-file:        LICENSE
+author:              David Johnson
+maintainer:          djohnson.m@gmail.com
+category:            Language
+build-type:          Simple
+extra-source-files:  ChangeLog.md
+cabal-version:       >=1.10
+
+library
+  build-depends:
+    base,
+    bytestring
+  hs-source-dirs:
+    src
+  build-tools:
+    hsc2hs
+  includes:
+    /nix/store/g0yy8f9idwkdjmfsa01jap2xli9fbwgl-julia-1.0.0/include/julia/julia.h
+  include-dirs:
+    /nix/store/g0yy8f9idwkdjmfsa01jap2xli9fbwgl-julia-1.0.0/include/julia
+  extra-lib-dirs:
+    /nix/store/g0yy8f9idwkdjmfsa01jap2xli9fbwgl-julia-1.0.0/lib/julia
+  cc-options:
+    -fPIC
+  exposed-modules:
+    Julia
+  default-language:
+    Haskell2010
+
+executable main
+  main-is:
+    Main.hs
+  hs-source-dirs:
+    exe
+  default-language:
+    Haskell2010
+  build-depends:
+    julia-ffi, base
+
+
