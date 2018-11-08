@@ -30,3 +30,7 @@ nix-build
 -- 1.4142135623730951
 ```
 
+## Reference
+
+> ["Julio, get the stretch"](https://www.youtube.com/watch?v=eb3hoJ-CLJ8)
+- Bruno Mars
