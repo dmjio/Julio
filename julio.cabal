@@ -1,8 +1,8 @@
-name:                julia-ffi
+name:                julio
 version:             0.1.0.0
 synopsis:            Haskell meets Julia
 description:         Julia DSL embedded in Haskell
-homepage:            github.com/botlab/julia-ffi
+homepage:            github.com/dmjio/julio
 license:             BSD3
 license-file:        LICENSE
 author:              David Johnson
@@ -14,22 +14,15 @@ cabal-version:       >=1.10
 
 library
   build-depends:
-    base,
-    bytestring
+    base
   hs-source-dirs:
     src
   build-tools:
     hsc2hs
-  includes:
-    /nix/store/g0yy8f9idwkdjmfsa01jap2xli9fbwgl-julia-1.0.0/include/julia/julia.h
-  include-dirs:
-    /nix/store/g0yy8f9idwkdjmfsa01jap2xli9fbwgl-julia-1.0.0/include/julia
-  extra-lib-dirs:
-    /nix/store/g0yy8f9idwkdjmfsa01jap2xli9fbwgl-julia-1.0.0/lib/julia
-  cc-options:
-    -fPIC
   exposed-modules:
     Julia
+  include-dirs:
+    /nix/store/z9qf3sv5247y54jijbpy22lxi6k8kx8s-julia-0.6.4/include/julia
   default-language:
     Haskell2010
 
@@ -40,7 +33,11 @@ executable main
     exe
   default-language:
     Haskell2010
+  cc-options:
+    -fPIC
+  ld-options:
+    -Wl,-rpath /nix/store/z9qf3sv5247y54jijbpy22lxi6k8kx8s-julia-0.6.4/lib
   build-depends:
-    julia-ffi, base
-
-
+    julio, base
+  extra-libraries:
+    julia

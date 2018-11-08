@@ -1,4 +1,4 @@
-# Revision history for julia-ffi
+# Revision history for julio
 
 ## 0.1.0.0 -- YYYY-mm-dd
 
