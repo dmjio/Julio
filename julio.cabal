@@ -17,12 +17,12 @@ library
     base
   hs-source-dirs:
     src
-  build-tools:
-    hsc2hs
   exposed-modules:
     Julia
-  include-dirs:
-    /nix/store/z9qf3sv5247y54jijbpy22lxi6k8kx8s-julia-0.6.4/include/julia
+  extra-libraries:
+    julia
+  build-tools:
+    hsc2hs
   default-language:
     Haskell2010
 
@@ -33,11 +33,5 @@ executable main
     exe
   default-language:
     Haskell2010
-  cc-options:
-    -fPIC
-  ld-options:
-    -Wl,-rpath /nix/store/z9qf3sv5247y54jijbpy22lxi6k8kx8s-julia-0.6.4/lib
   build-depends:
     julio, base
-  extra-libraries:
-    julia
