@@ -6,7 +6,7 @@ homepage:            github.com/dmjio/julio
 license:             BSD3
 license-file:        LICENSE
 author:              David Johnson
-maintainer:          djohnson.m@gmail.com
+maintainer:          code@dmj.io
 category:            Language
 build-type:          Simple
 extra-source-files:  ChangeLog.md
